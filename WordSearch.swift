@@ -127,9 +127,7 @@ private extension WordSearch {
         }
 
         for i in 0..<len {
-            let emptyCheck = !String(cells[rr][cc]).isEmpty
-            let charCheck = String(cells[rr][cc]) != word[i]
-            if emptyCheck && charCheck { return 0 }
+            if (String(cells[rr][cc]) != " ") && String(cells[rr][cc]) != word[i] { return 0 }
             cc += WordSearch.dirs[dir][0]
             rr += WordSearch.dirs[dir][1]
         }
